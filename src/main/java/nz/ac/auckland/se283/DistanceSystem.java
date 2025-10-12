@@ -10,15 +10,19 @@ public class DistanceSystem {
   }
 
   public DistanceSystem(int distance, int degrees) {
-    this.distance = distance;
+    if (distance < 1 || distance > 10) {
+      this.distance = 5; // specifed default value
+    } else {
+      this.distance = distance;
+    }
     this.degrees = degrees;
   }
 
-  public int getDistance() {
+  public int getDistance() { // gets distance
     return distance;
   }
 
-  public Integer getDegrees() {
+  public int getDegrees() { // Changed from Integer to int for consistency
     return degrees;
   }
 }

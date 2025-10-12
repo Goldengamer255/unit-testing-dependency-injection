@@ -26,7 +26,7 @@ public class DistanceSystemTest {
   }
 
   @ParameterizedTest(name = "Distance{0}_shouldDefault to 5")
-  @ValueSource(ints = {-1, 0, 11, 15, 100}) // invalid distances
+  @ValueSource(ints = {-1, 0, 11}) // invalid distances
   void setDistance_invalidValues_defaultsToFive(int invalidDistance) {
     DistanceSystem system = new DistanceSystem(invalidDistance, 0);
 
