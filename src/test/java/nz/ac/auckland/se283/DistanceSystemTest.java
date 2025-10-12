@@ -34,4 +34,13 @@ public class DistanceSystemTest {
 
     assertEquals(5, result);
   }
+
+  @ParameterizedTest(name = "Distance {0} (boundary) should be set correctly")
+  @ValueSource(ints = {1, 10})
+  void constructor_exactBoundaries_setsCorrectly(int boundaryValue) {
+
+    DistanceSystem system = new DistanceSystem(boundaryValue, 0);
+
+    assertEquals(boundaryValue, system.getDistance());
+  }
 }
