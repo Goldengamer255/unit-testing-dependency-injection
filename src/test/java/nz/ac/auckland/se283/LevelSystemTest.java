@@ -19,4 +19,11 @@ public class LevelSystemTest {
     String concept = level.getConceptForLevel(2);
     assertEquals("Operators and Expressions", concept);
   }
+
+  @Test
+  void getConceptForlevel_level3_returnsConditionalStatements() {
+    LevelSystem level = new LevelSystem();
+    String concept = level.getConceptForLevel(3);
+    assertEquals("Conditional Statements", concept);
+  }
 }
