@@ -7,6 +7,7 @@ public class LevelSystem {
   private static final String level3_concept = "Conditional Statements";
   private static final String level4_concept = "Loops";
   private static final String level5_concept = "Methods";
+  private static final String level6_concept = "Arrays and ArrayLists";
 
   public String getConceptForLevel(int level) {
     if (level == 2) {
@@ -17,6 +18,8 @@ public class LevelSystem {
       return level4_concept;
     } else if (level == 5) {
       return level5_concept;
+    } else if (level == 6) {
+      return level6_concept;
     }
     return level1_concept;
   }
