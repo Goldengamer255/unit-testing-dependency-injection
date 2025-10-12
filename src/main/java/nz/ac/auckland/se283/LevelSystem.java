@@ -25,4 +25,9 @@ public class LevelSystem {
     }
     return level1_concept;
   }
+
+  public Object getAllConcepts() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getAllConcepts'");
+  }
 }
