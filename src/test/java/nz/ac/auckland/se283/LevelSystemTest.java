@@ -12,4 +12,11 @@ public class LevelSystemTest {
     String concept = level.getConceptForLevel(1);
     assertEquals("Variables and Data Types", concept);
   }
+
+  @Test
+  void getConceptForlevel_level2_returnsConditionalStatements() {
+    LevelSystem level = new LevelSystem();
+    String concept = level.getConceptForLevel(2);
+    assertEquals("Operators and Expressions", concept);
+  }
 }
