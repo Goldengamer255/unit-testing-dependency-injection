@@ -11,7 +11,6 @@ public class LevelSystem {
   private static final String level4_concept = "Loops";
   private static final String level5_concept = "Methods";
   private static final String level6_concept = "Arrays_and_ArrayLists";
-  private static final String level7_concept = "Recursion";
 
   Set<String> concepts = new HashSet<>();
 
@@ -44,6 +43,23 @@ public class LevelSystem {
   }
 
   public boolean checkIfDifferent() {
-    return false;
+    String[] conceptArray = {
+      level1_concept,
+      level2_concept,
+      level3_concept,
+      level4_concept,
+      level5_concept,
+      level6_concept,
+    };
+
+    for (int i = 0; i < conceptArray.length; i++) {
+      for (int j = i + 1; j < conceptArray.length; j++) {
+        if (conceptArray[i].equals(conceptArray[j])) {
+          return false;
+        }
+      }
+    }
+
+    return true;
   }
 }
