@@ -1,8 +1,10 @@
 package nz.ac.auckland.se283;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -24,7 +26,14 @@ public class LevelSystemTest {
     "5, Methods",
     "6, Arrays_and_ArrayLists"
   })
-  void getConceptForLevel_returnsExpectedConcept(int currentlevel, String concept) {
+  void getConceptForLevel_forEachLevel_returnsExpectedConcept(int currentlevel, String concept) {
     assertEquals(concept, level.getConceptForLevel(currentlevel));
+  }
+
+  @Test
+  void getConceptForLevel_lessThanOne_throwsInvalidLevelException() {
+    int currentLevel = 0;
+
+    assertNotEquals("Variables", level.getConceptForLevel(currentLevel));
   }
 }
