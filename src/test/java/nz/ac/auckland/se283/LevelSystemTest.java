@@ -26,4 +26,11 @@ public class LevelSystemTest {
     String concept = level.getConceptForLevel(3);
     assertEquals("Conditional Statements", concept);
   }
+
+  @Test
+  void getConceptForlevel_level4_returnsLoops() {
+    LevelSystem level = new LevelSystem();
+    String concept = level.getConceptForLevel(4);
+    assertEquals("Loops", concept);
+  }
 }
