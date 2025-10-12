@@ -40,4 +40,11 @@ public class LevelSystemTest {
     String concept = level.getConceptForLevel(5);
     assertEquals("Methods", concept);
   }
+
+  @Test
+  void getConceptForlevel_level6_returnsArraysAndArrayLists() {
+    LevelSystem level = new LevelSystem();
+    String concept = level.getConceptForLevel(6);
+    assertEquals("Arrays and ArrayLists", concept);
+  }
 }
