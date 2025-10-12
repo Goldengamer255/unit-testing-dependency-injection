@@ -10,7 +10,9 @@ public class LevelSystem {
   private static final String level6_concept = "Arrays_and_ArrayLists";
 
   public String getConceptForLevel(int level) {
-
+    if (level < 1) {
+      return "invalid";
+    }
     if (level == 2) {
       return level2_concept;
     } else if (level == 3) {
