@@ -33,4 +33,11 @@ public class LevelSystemTest {
     String concept = level.getConceptForLevel(4);
     assertEquals("Loops", concept);
   }
+
+  @Test
+  void getConceptForlevel_level5_returnsMethods() {
+    LevelSystem level = new LevelSystem();
+    String concept = level.getConceptForLevel(5);
+    assertEquals("Methods", concept);
+  }
 }
