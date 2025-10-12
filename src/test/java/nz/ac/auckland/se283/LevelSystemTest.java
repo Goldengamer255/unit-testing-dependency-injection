@@ -2,49 +2,29 @@ package nz.ac.auckland.se283;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class LevelSystemTest {
 
-  @Test
-  void getConceptForlevel_level1_returnsConditionalStatements() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(1);
-    assertEquals("Variables and Data Types", concept);
+  private LevelSystem level;
+
+  @BeforeEach
+  void setUp() {
+    level = new LevelSystem();
   }
 
-  @Test
-  void getConceptForlevel_level2_returnsConditionalStatements() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(2);
-    assertEquals("Operators and Expressions", concept);
-  }
-
-  @Test
-  void getConceptForlevel_level3_returnsConditionalStatements() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(3);
-    assertEquals("Conditional Statements", concept);
-  }
-
-  @Test
-  void getConceptForlevel_level4_returnsLoops() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(4);
-    assertEquals("Loops", concept);
-  }
-
-  @Test
-  void getConceptForlevel_level5_returnsMethods() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(5);
-    assertEquals("Methods", concept);
-  }
-
-  @Test
-  void getConceptForlevel_level6_returnsArraysAndArrayLists() {
-    LevelSystem level = new LevelSystem();
-    String concept = level.getConceptForLevel(6);
-    assertEquals("Arrays and ArrayLists", concept);
+  @ParameterizedTest(name = "getConceptForlevel{0}_returns{1}")
+  @CsvSource({
+    "1, Variables",
+    "2, Operators",
+    "3, Conditional_Statements",
+    "4, Loops",
+    "5, Methods",
+    "6, Arrays_and_ArrayLists"
+  })
+  void getConceptForLevel_returnsExpectedConcept(int currentlevel, String concept) {
+    assertEquals(concept, level.getConceptForLevel(currentlevel));
   }
 }
