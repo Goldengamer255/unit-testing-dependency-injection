@@ -36,4 +36,11 @@ public class LevelSystemTest {
 
     assertThrows(InvalidLevelException.class, () -> level.getConceptForLevel(currentLevel));
   }
+
+  @Test
+  void getConceptForLevel_moreThanSix_throwsInvalidLevelException() {
+    int currentLevel = 7;
+
+    assertThrows(InvalidLevelException.class, () -> level.getConceptForLevel(currentLevel));
+  }
 }
