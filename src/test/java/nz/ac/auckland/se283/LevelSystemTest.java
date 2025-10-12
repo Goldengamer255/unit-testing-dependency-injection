@@ -1,7 +1,7 @@
 package nz.ac.auckland.se283;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,6 +34,6 @@ public class LevelSystemTest {
   void getConceptForLevel_lessThanOne_throwsInvalidLevelException() {
     int currentLevel = 0;
 
-    assertNotEquals("Variables", level.getConceptForLevel(currentLevel));
+    assertThrows(InvalidLevelException.class, () -> level.getConceptForLevel(currentLevel));
   }
 }
