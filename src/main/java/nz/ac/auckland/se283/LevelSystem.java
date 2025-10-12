@@ -1,5 +1,8 @@
 package nz.ac.auckland.se283;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LevelSystem {
 
   private static final String level1_concept = "Variables";
@@ -8,6 +11,9 @@ public class LevelSystem {
   private static final String level4_concept = "Loops";
   private static final String level5_concept = "Methods";
   private static final String level6_concept = "Arrays_and_ArrayLists";
+  private static final String level7_concept = "Recursion";
+
+  Set<String> concepts = new HashSet<>();
 
   public String getConceptForLevel(int level) {
     if (level < 1 || level > 6) {
@@ -35,5 +41,9 @@ public class LevelSystem {
         level4_concept,
         level5_concept,
         level6_concept);
+  }
+
+  public boolean checkIfDifferent() {
+    return false;
   }
 }

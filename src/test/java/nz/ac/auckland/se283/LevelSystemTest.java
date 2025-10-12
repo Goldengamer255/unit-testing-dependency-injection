@@ -43,4 +43,9 @@ public class LevelSystemTest {
         "Variables, Operators, Conditional_Statements, Loops, Methods, Arrays_and_ArrayLists",
         level.getAllConcepts());
   }
+
+  @Test
+  void getAllConcepts_whenAllLevelsDifferent_returnsTrue() {
+    assertEquals(true, level.checkIfDifferent());
+  }
 }
