@@ -12,8 +12,7 @@ public class LevelSystem {
   public String getConceptForLevel(int level) {
     if (level < 1 || level > 6) {
       throw new InvalidLevelException(level, 1, 6);
-    }
-    if (level == 2) {
+    } else if (level == 2) {
       return level2_concept;
     } else if (level == 3) {
       return level3_concept;
