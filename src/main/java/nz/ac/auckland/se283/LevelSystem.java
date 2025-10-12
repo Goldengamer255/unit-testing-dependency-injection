@@ -5,7 +5,8 @@ import java.util.Set;
 
 public class LevelSystem {
 
-  private static final String level1_concept = "Variables";
+  private static final String level1_concept =
+      "Variables"; // Constants for each level's concept to avoid magic strings
   private static final String level2_concept = "Operators";
   private static final String level3_concept = "Conditional_Statements";
   private static final String level4_concept = "Loops";
@@ -16,7 +17,7 @@ public class LevelSystem {
 
   public String getConceptForLevel(int level) {
     if (level < 1 || level > 6) {
-      throw new InvalidLevelException(level, 1, 6);
+      throw new InvalidLevelException(level, 1, 6); // Throws exception for invalid levels
     } else if (level == 2) {
       return level2_concept;
     } else if (level == 3) {
@@ -31,7 +32,7 @@ public class LevelSystem {
     return level1_concept;
   }
 
-  public Object getAllConcepts() {
+  public Object getAllConcepts() { // returns all concepts as a single comma-separated string
     return String.join(
         ", ",
         level1_concept,
@@ -42,7 +43,7 @@ public class LevelSystem {
         level6_concept);
   }
 
-  public boolean checkIfDifferent() {
+  public boolean checkIfDifferent() { // checks if all concepts are different
     String[] conceptArray = {
       level1_concept,
       level2_concept,
@@ -52,7 +53,9 @@ public class LevelSystem {
       level6_concept,
     };
 
-    for (int i = 0; i < conceptArray.length; i++) {
+    for (int i = 0;
+        i < conceptArray.length;
+        i++) { // nested loop to compare each concept with every other concept
       for (int j = i + 1; j < conceptArray.length; j++) {
         if (conceptArray[i].equals(conceptArray[j])) {
           return false;

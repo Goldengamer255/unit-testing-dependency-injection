@@ -48,7 +48,7 @@ public class DistanceSystemTest {
   @ParameterizedTest(
       name =
           "Distance {0} (boundary) should be set correctly") // testing valid boundary values 1 and
-                                                             // 10 so they are set correctly
+  // 10 so they are set correctly
   @ValueSource(ints = {1, 10})
   void constructor_exactBoundaries_setsCorrectly(int boundaryValue) {
     DistanceSystem system = new DistanceSystem(boundaryValue, 0);

@@ -1,9 +1,9 @@
 package nz.ac.auckland.se283;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals; // for assertions in tests
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach; // setup method before each test
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -18,7 +18,8 @@ public class LevelSystemTest {
     level = new LevelSystem();
   }
 
-  @ParameterizedTest(name = "getConceptForlevel{0}_returns{1}")
+  @ParameterizedTest(
+      name = "getConceptForlevel{0}_returns{1}") // parameterized test for all valid levels
   @CsvSource({
     "1, Variables",
     "2, Operators",
@@ -31,16 +32,26 @@ public class LevelSystemTest {
     assertEquals(concept, level.getConceptForLevel(currentlevel));
   }
 
-  @ParameterizedTest(name = "getConceptForLevel_invalidLevel_{0}_throwsInvalidLevelException")
+  @ParameterizedTest(
+      name =
+          "getConceptForLevel_invalidLevel_{0}_throwsInvalidLevelException") // testing invalid
+                                                                             // levels -1,0,7 and 8
   @ValueSource(ints = {0, 7})
   void getConceptForLevel_invalidLevels_throwsInvalidLevelException(int currentLevel) {
-    assertThrows(InvalidLevelException.class, () -> level.getConceptForLevel(currentLevel));
+    assertThrows(
+        InvalidLevelException.class,
+        () ->
+            level.getConceptForLevel(
+                currentLevel)); // expects exception to be thrown for invalid levels
   }
 
   @Test
   void getAllConcepts_whenCalled_returnsAllConcepts() {
     assertEquals(
-        "Variables, Operators, Conditional_Statements, Loops, Methods, Arrays_and_ArrayLists",
+        "Variables, Operators,"
+            + " Conditional_Statements,"
+            + " Loops, Methods,"
+            + " Arrays_and_ArrayLists", // expects this exact string when getAllConcepts is called
         level.getAllConcepts());
   }
 

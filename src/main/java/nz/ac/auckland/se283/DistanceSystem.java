@@ -5,11 +5,9 @@ public class DistanceSystem {
   private int degrees;
   private UnitConverter unitConverter;
 
-  public DistanceSystem() {
+  public DistanceSystem() { // default constructor
     this.distance = 5;
     this.degrees = 0;
-    // Removed: this.unitConverter = new UnitConverter();
-    // Can't instantiate an interface
   }
 
   public DistanceSystem(int distance, int degrees) {
@@ -37,10 +35,10 @@ public class DistanceSystem {
       this.distance = distance;
     }
     this.degrees = degrees;
-    this.unitConverter = unitConverter;
+    this.unitConverter = unitConverter; // Dependency injection
   }
 
-  public int getDistance() {
+  public int getDistance() { // returns distance value of the object
     return distance;
   }
 
@@ -49,6 +47,7 @@ public class DistanceSystem {
   }
 
   public double metersToCentimeters(double meters) {
-    return unitConverter.metersToCentimeters(meters);
+    return unitConverter.metersToCentimeters(
+        meters); // Delegates the conversion to the injected UnitConverter
   }
 }
