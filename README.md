@@ -1,4 +1,4 @@
-# Distance & Level System — Java Unit Testing Project 🧪
+# Distance & Level System — Java Unit Testing Project including dependency injection 🧪
 
 A refactored Java project demonstrating advanced software testing principles through Black-Box and White-Box testing. This version introduces a `UnitConverter` **interface** instead of a concrete class, enabling true mock-based dependency injection testing with Mockito, and uses a `HashSet` in `LevelSystem` for uniqueness checking.
 
